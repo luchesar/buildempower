@@ -8,7 +8,7 @@ var util = require('gulp-util');
 var watch = require('gulp-watch');
 var path = require('path');
 
-var styleBase = 'static/assets/style/';
+var styleBase = 'static/assets/style/'; 
 var paths = {
   scripts: {
     bootstrap: 'static/assets/js/bootstrap/source/*.js',
