@@ -17,9 +17,8 @@ var paths = {
   },
   images: 'static/assets/images/**/*',
   pages: ["index.html", "static/pages/**/*.html"],
-  less: [
-    styleBase + '/bootstrap.less'
-  ]
+  less: [styleBase + '/bootstrap.less'],
+  fonts: ['static/assets/fonts/fontello/css/*.css']
 };
 
 
@@ -30,14 +29,20 @@ gulp.task('server', function () {
       port: 35728  
    };
    server.run(options);
-   var restart = function(server) {
+   var restart = function() {
+     console.log('restarting the server');
      server.stop();
      server.run(options);
      server.notify();
-   }
-//   gulp.watch(['index.html'], restart(server));
-//   gulp.watch(paths.pages, restart(server));
-//   gulp.watch(paths.images, restart(server));
+   };
+   gulp.watch(['index.html'], restart);
+   gulp.watch(paths.pages, restart);
+   gulp.watch(paths.images, restart);
+   gulp.watch(paths.fonts, restart);
+   gulp.watch(styleBase + '**/*.less', ['less', restart]);
+   gulp.watch(paths.scripts.bootstrap, ['compress-bootstrap', restart]);
+   gulp.watch(paths.scripts.jqueryPlugins, ['compress-plugins', restart]);
+   gulp.watch(paths.scripts.application, ['compress-application', restart]);
 });
 
 gulp.task('less', function () {

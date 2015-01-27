@@ -117,6 +117,7 @@ var SampleApp = function() {
     self.initializeServer = function() {
         self.createRoutes();
         self.app = express();
+        //self.app.use(require('connect-livereload')());
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
