@@ -61,12 +61,14 @@ $(document).ready(function(){
     *  Paralax initialization.
     *  Exclude for mobile.
     */
-//    if(pageWidth > 980){
-        /* Dont user paralax for tablet and mobile devices. */
+    if(pageWidth > 640){
         $('#page-welcome').parallax("0%", 0.2);
         $('#page-features').parallax("0%", 0.07);
         $('#page-twitter').parallax("0%", 0.2);
-//    }
+    } else {
+        /* Dont user paralax for some pages for tablet and mobile devices. */
+        $('#page-welcome').parallax("0%", 0.2);
+    }
     
     /* Emulate touch on table/mobile touchstart. */
     if(typeof(window.ontouchstart) != 'undefined') {
