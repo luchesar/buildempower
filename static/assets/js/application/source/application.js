@@ -30,7 +30,7 @@ $(document).ready(function(){
     
     /* Centralize elements on page. */
     $('.centralized').centralized({
-        delay: 1500,
+        delay: 200,
         fadeSpeed: 500
     });
     
@@ -126,7 +126,7 @@ $(document).ready(function(){
         pager: false,
         controls: false,
         useCSS: false,
-        pause: 10000
+        pause: 600
     });
     
     /**
@@ -193,11 +193,11 @@ $(document).ready(function(){
 */
 $( document ).ajaxSend( function() {
     /* Show loader. */
-    if($(".loading").length == 0) {
-        $("body").append('<div class="loading"><div class="progress progress-striped active"><div class="bar"></div></div></div>');
-        $(".loading").slideDown();
-        $(".loading .progress .bar").delay(300).css("width", "100%");
-    }
+//    if($(".loading").length == 0) {
+//        $("body").append('<div class="loading"><div class="progress progress-striped active"><div class="bar"></div></div></div>');
+//        $(".loading").slideDown();
+//        $(".loading .progress .bar").delay(100).css("width", "100%");
+//    }
 });
 
 /**
@@ -207,13 +207,13 @@ $( document ).ajaxSend( function() {
 */
 $( document ).ajaxComplete(function() {
     /* Remove loading section. */
-    $(".loading").delay(1000).slideUp(500, function(){
+    $(".loading").delay(350).slideUp(500, function(){
         $(this).remove();
     });
     
     /* Portfolio details - close. */
     $(".close-portfolio span").click(function(e) {
-        $(".portfolio-item-details").delay(500).slideUp(500, function(){
+        $(".portfolio-item-details").delay(200).slideUp(500, function(){
             $(this).remove();
         });
         

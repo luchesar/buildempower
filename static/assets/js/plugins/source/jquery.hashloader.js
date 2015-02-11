@@ -103,7 +103,7 @@
                         if(hashDestination.data("destination") == 'plugin-filter-elements'){
                             setTimeout(function() {
                                 $('.plugin-filter-elements').mixitup('remix','all');
-                            }, 1000);
+                            }, 500);
                         }
                         
                         /*  
@@ -115,7 +115,7 @@
 
                             $('html, body').animate({
                                 scrollTop: $(".portfolio-item-details").offset().top - 70
-                            }, 1000);
+                            }, 500);
                         }
                     
                         /*  
@@ -127,17 +127,17 @@
 
                             $('html, body').animate({
                                 scrollTop: $(".blog-details").offset().top - 70
-                            }, 1000);
+                            }, 500);
                         }
                     /*
                     *   Action on href element
                     */
                     if(hashDestination.data("action") == "remove") {
-                        $(hashDestination).delay(500).slideUp(400, function(){
+                        $(hashDestination).delay(200).slideUp(400, function(){
                             $(this).remove();
                         });
                     } else if(hashDestination.data("action") == "hide") {
-                        $(hashDestination).delay(500).slideUp(400, function(){
+                        $(hashDestination).delay(200).slideUp(400, function(){
                             $(this).remove();
                         });
                     }
